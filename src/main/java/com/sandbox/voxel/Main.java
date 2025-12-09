@@ -101,9 +101,11 @@ public class Main extends SimpleApplication {
     @Override
     public void stop() {
         // Save world before closing
-        System.out.println("Saving world...");
-        world.saveModifiedChunks();
-        System.out.println("World saved.");
+        if (world != null) {
+            System.out.println("Saving world...");
+            world.saveModifiedChunks();
+            System.out.println("World saved.");
+        }
         super.stop();
     }
 }
